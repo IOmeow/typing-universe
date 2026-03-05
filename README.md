@@ -11,7 +11,7 @@ Letters **slow down and fade out**, creating a dynamic generative art overlay.
 - Letters appear at **random positions** on your screen  
 - Each letter **rotates**, gradually slows down, and fades out  
 - **Mouse attracts letters** for interactive control  
-- **Control panel** to adjust parameters (speed, rotation, fade, etc.)  
+- **Control panel** to adjust parameters (size, gravity, etc.)  
 - Runs on **Windows / macOS / Linux** using **Tauri + p5.js**  
 - Lightweight, fun, and interactive overlay  
 
