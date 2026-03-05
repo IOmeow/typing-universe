@@ -6,8 +6,6 @@ Letters **slow down and fade out**, creating a dynamic generative art overlay.
 
 ![Demo GIF](demo.gif)
 
----
-
 ## Features
 
 - Letters appear at **random positions** on your screen  
@@ -16,8 +14,6 @@ Letters **slow down and fade out**, creating a dynamic generative art overlay.
 - **Control panel** to adjust parameters (speed, rotation, fade, etc.)  
 - Runs on **Windows / macOS / Linux** using **Tauri + p5.js**  
 - Lightweight, fun, and interactive overlay  
-
----
 
 ## How to Use
 
@@ -30,15 +26,11 @@ Letters **slow down and fade out**, creating a dynamic generative art overlay.
    - Open the **Control Panel** to adjust size, gravity, or other parameters
    - Exit  
 
----
-
 ## Notes
 
 - This overlay is **always on top**, so be careful when typing in other apps  
 - Designed for fun, creative coding experiments  
 - Works best with continuous typing and mouse interaction  
-
----
 
 ## License
 
