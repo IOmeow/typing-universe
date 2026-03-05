@@ -22,8 +22,9 @@ const sketch = (p) => {
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
+    console.log(p.windowWidth);
     p.clear();
-    gravityCenter = p.createVector(p.width/2, p.height/2);
+    gravityCenter = p.createVector(p.width / 2, p.height / 2);
     p.textFont('monospace');
     p.colorMode(p.HSB, 360, 100, 100, 100);
     console.log("setup finished");
@@ -31,18 +32,19 @@ const sketch = (p) => {
   };
 
   p.windowResized = () => {
-    p.resizeCanvas(p.windowWidth, p.windowHeight); 
+    p.resizeCanvas(p.windowWidth, p.windowHeight);
+    console.log(p.windowWidth);
   };
 
   p.draw = () => {
     p.clear();
 
     for (let i = particles.length - 1; i >= 0; i--) {
-        let p = particles[i];
-        p.applyGravity(gravityCenter);
-        p.update();
-        p.show();
-        if (p.lifespan <= 0) particles.splice(i, 1);
+      let p = particles[i];
+      p.applyGravity(gravityCenter);
+      p.update();
+      p.show();
+      if (p.lifespan <= 0) particles.splice(i, 1);
     }
   };
 
@@ -69,9 +71,9 @@ const sketch = (p) => {
     const [x, y] = event.payload;
     // p.mousePos.x = x;
     // p.mousePos.y = y;
-    gravityCenter.set(x, y);
+    gravityCenter.set(x / window.devicePixelRatio, y / window.devicePixelRatio);
   });
-  
+
 };
 
 new p5(sketch);
@@ -88,7 +90,7 @@ class Particle {
     this.size = p.random(settings.particle_size, settings.particle_size * 2 / this.char.length);
     this.rotate = p.random(360);
 
-    let codeValue = this.char.charCodeAt(this.char.length-1);
+    let codeValue = this.char.charCodeAt(this.char.length - 1);
     this.hueValue = (p.map(codeValue, 32, 126, 0, 360) + settings.hue_offset) % 360;
   }
 
@@ -106,9 +108,9 @@ class Particle {
     this.pos.add(this.vel);
     this.acc.mult(0);
 
-    this.lifespan -= 0.5;
+    this.lifespan -= settings.life_decay;
     this.vel.mult(0.98);
-    this.rotate += (0.01 * this.lifespan);
+    this.rotate += (0.0001 * settings.rotate_speed * this.lifespan);
 
     if (this.pos.x < 0 || this.pos.x > this.p.width)
       this.vel.x *= -1;

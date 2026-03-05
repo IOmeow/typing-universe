@@ -53,16 +53,16 @@ pub fn run() {
 
             // ========= 建立選單項目 =========
             let toggle_fullscreen =
-                MenuItemBuilder::new("切換全螢幕").id("toggle_fullscreen").build(app)?;
+                MenuItemBuilder::new("Toggle Fullscreen").id("toggle_fullscreen").build(app)?;
 
             let toggle_visibility =
-                MenuItemBuilder::new("顯示 / 隱藏視窗").id("toggle_visibility").build(app)?;
+                MenuItemBuilder::new("Show / Hide").id("toggle_visibility").build(app)?;
 
             let toggle_control =
-                MenuItemBuilder::new("控制").id("toggle_control").build(app)?;
+                MenuItemBuilder::new("Control Panel").id("toggle_control").build(app)?;
 
             let quit =
-                MenuItemBuilder::new("離開").id("quit").build(app)?;
+                MenuItemBuilder::new("Exit").id("quit").build(app)?;
 
             let menu = MenuBuilder::new(app)
                 .items(&[
